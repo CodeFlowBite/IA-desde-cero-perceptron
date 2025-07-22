@@ -125,28 +125,6 @@ print(f"peso w del perceptron: {n1.w}")
 print(f"bia b  del perceptron: {n1.b}")
 
 
-epocas = 100
-tz = 0.5
-
-for e in range(epocas+1):
-
-    costos = []
-
-    for d in range(len(Data_x_norm)):
-        y = n1.forward([Data_x_norm[d]])
-        costo = Costo(y, Data_y_norm[d])
-        costos.append(costo)
-
-    for d in range(len(Data_x_norm)):
-        y = n1.forward([Data_x_norm[d]])
-        costo = Costo(y, Data_y_norm[d])
-        n1.update_parameters(costo, tz)
-
-    loss = perdida_cuadratica_media(costos)
-    print(f"Perdida: {loss}, epocas:{e}")
-
-
-
 
 
 
